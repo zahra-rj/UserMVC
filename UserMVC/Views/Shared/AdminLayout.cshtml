@@ -4,33 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] | User.MVC</title>
-
-    <!-- اگر Bootstrap داری -->
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel ="stylesheet" href="~/css/AdminStyle.css" />
 
     <style>
         body {
             margin: 0;
             font-family: "IRANSans", sans-serif;
         }
-        /* نوار منوی بالای صفحه */
+        
         header {
-            background-color: #242424;  /* رنگ تیره دلخواه */
-            color: white;
+            background-color: #24242422;
+            color: hotpink;
             height: 48px;
-            line-height: 48px;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-        }
+
+            header a {
+                color: white;
+                text-decoration: none;
+                margin-left: 15px;
+            }
+
         main {
-            padding: 20px;
+            padding: 50px;
         }
     </style>
 </head>
@@ -47,7 +47,7 @@
         </nav>
     </header>
 
-    <main role="main" class="container">
+    <main>
         @RenderBody()
     </main>
 

@@ -1,0 +1,21 @@
+﻿@using UserMVC.Views.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "درج کاربر جدید";
+}
+@model User
+<h2 class="text-center mt-4">new user</h2>
+
+<form asp-action="Insert" asp-controller="User" method="post" class="mt-3">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">نام</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label">سن</label>
+        <input asp-for="Age" type="number" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-dark">ثبت کاربر</button>
+</form>

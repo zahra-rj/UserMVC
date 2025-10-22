@@ -1,6 +1,31 @@
-﻿@{
+﻿@using UserMVC.Views.User
+@{
     ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+@model List<User>
 <h2>لیست کاربران</h2>
-<p>این صفحه با اکشن List کنترلر User ساخته شده.</p>
+<table class="table table-dark table_striped mt-4">
+    <thead>
+    <tr>
+        <th>شناسه</th>
+        <th>نام</th>
+        <th>ایمیل</th>
+        <th>سن</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+              <td>@u.Id</td> 
+                <td>@u.Name</td>
+                <td>@u.Email</td>
+                <td>@u.Age</td>
+                <td><a href="/User/Delete/@u.Id">حذف</a><a href="/User/Update/@u.Id">ویرایش</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

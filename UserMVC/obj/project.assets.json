@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\asus\\.nuget\\packages\\": {},
-    "D:\\Visual_Shared\\NuGetPackages": {}
+    "C:\\Users\\Zahra\\.nuget\\packages\\": {},
+    "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\visual\\UserMVC\\UserMVC.csproj",
+      "projectUniqueName": "D:\\Mein\\UserMVC\\UserMVC\\UserMVC.csproj",
       "projectName": "UserMVC",
-      "projectPath": "D:\\visual\\UserMVC\\UserMVC.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\visual\\UserMVC\\obj\\",
+      "projectPath": "D:\\Mein\\UserMVC\\UserMVC\\UserMVC.csproj",
+      "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+      "outputPath": "D:\\Mein\\UserMVC\\UserMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual_Shared\\NuGetPackages"
+        "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

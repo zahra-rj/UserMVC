@@ -1,0 +1,46 @@
+﻿body {
+    margin: 0;
+    font-family: "IRANSans", sans-serif;
+}
+
+header {
+    background-color: #24242422;
+    color: hotpink;
+    height: 48px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+    }
+
+main {
+    padding: 50px;
+}
+
+</style >
+</head >
+
+<body >
+<header >
+<div class="logo" >
+<span style="font-weight:bold;" > Wallet.MVC</span >
+</div >
+<nav >
+<a href="/Home/Index" > خانه</a >
+<a href="/User/List" > کاربران</a >
+<a href="/About" > درباره</a >
+</nav >
+</header >
+
+<main >
+@RenderBody()
+</main >
+
+@RenderSection("Scripts", required: false)
+</body >
