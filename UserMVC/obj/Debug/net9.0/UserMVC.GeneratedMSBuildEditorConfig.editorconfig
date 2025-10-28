@@ -14,14 +14,22 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\Mein\UserMVC\UserMVC
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/Mein/UserMVC/UserMVC/Views/Car/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Mein/UserMVC/UserMVC/Views/Car/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mein/UserMVC/UserMVC/Views/Car/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mein/UserMVC/UserMVC/Views/Home/Index.cshtml]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UserMVC.Models;
-using UserMVC.Views.User;
+//using UserMVC.Views.User;
 
 
 namespace UserMVC.Controllers

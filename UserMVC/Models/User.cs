@@ -1,4 +1,4 @@
-﻿namespace UserMVC.Views.User
+﻿namespace UserMVC.Models
 {
     public class User
     {

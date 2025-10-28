@@ -1,4 +1,4 @@
-﻿@using UserMVC.Views.User
+﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "به روز رسانی کاربر جدید";
@@ -7,7 +7,7 @@
 <h2 class="text-center mt-4">new user</h2>
 
 <form asp-action="Update" asp-controller="User" method="post" class="mt-3">
-    <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="Id" />
     <div class="mb-3">
         <label asp-for="Name" class="form-label">نام</label>
         <input asp-for="Name" class="form-control" />

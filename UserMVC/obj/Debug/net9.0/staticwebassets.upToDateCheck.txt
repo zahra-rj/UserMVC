@@ -1,3 +1,4 @@
+wwwroot\css\AdminStyle.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
@@ -61,8 +62,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\AdminStyle.css
-D:\Mein\UserMVC\UserMVC\wwwroot\css\AdminStyle.css
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\LICENSE.txt
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\dist\jquery.slim.min.js
@@ -123,5 +122,6 @@ D:\Mein\UserMVC\UserMVC\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 D:\Mein\UserMVC\UserMVC\wwwroot\js\site.js
-D:\Mein\UserMVC\UserMVC\wwwroot\css\site.css
 D:\Mein\UserMVC\UserMVC\wwwroot\favicon.ico
+D:\Mein\UserMVC\UserMVC\wwwroot\css\AdminStyle.css
+D:\Mein\UserMVC\UserMVC\wwwroot\css\site.css

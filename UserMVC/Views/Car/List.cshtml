@@ -1,6 +1,6 @@
 ﻿
-
-@model List<Car>
+@using UserMVC.ViewModels
+@model List<VmCar>
 
 <h2>لیست ماشین ها</h2>
 
@@ -19,7 +19,8 @@
         <th>برند</th>
         <th>مدل</th>
         <th>رنگ</th>
-        <th></th>
+            <th>مالک</th>
+        <th></th>       
     </tr>
     </thead>
     <tbody>
@@ -30,7 +31,8 @@
                 <td>@u.Brand</td>
                 <td>@u.Model</td>
                 <td>@u.Color</td>
-                @* <td><a href="/User/Delete/@u.Id">حذف</a><a href="/User/Update/@u.Id">ویرایش</a></td> *@
+                <td>@u.UserName</td>
+                <td><a href="/User/Delete/@u.Id">حذف</a><a href="/User/Update/@u.Id">ویرایش</a></td>
             </tr>
         }
     </tbody>

@@ -1,4 +1,4 @@
-﻿@using UserMVC.Views.User
+﻿
 @{
     ViewData["Title"] = "List";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -14,12 +14,15 @@
         <th>سن</th>
         <th></th>
     </tr>
+
+
+
     </thead>
     <tbody>
         @foreach (var u in Model)
         {
             <tr>
-              <td>@u.Id</td> 
+                <td>@u.Id</td>
                 <td>@u.Name</td>
                 <td>@u.Email</td>
                 <td>@u.Age</td>
