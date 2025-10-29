@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IUserService, UserDBService>();
+//builder.Services.AddTransient<IUserService, UserDBService>();
+builder.Services.AddTransient<IUserService, UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
