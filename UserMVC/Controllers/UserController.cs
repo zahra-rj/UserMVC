@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using UserMVC.DB;
 using UserMVC.Models;
+using UserMVC.Services;
 //using UserMVC.Views.User;
 
 
@@ -8,64 +11,56 @@ namespace UserMVC.Controllers
 
     public class UserController : Controller
     {
-        public static List<User> ListUsers = new List<User>
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
         {
-             new User {Id=1 , Name = "ستاره", Email = "setareh@example.com", Age = 29 },
-              new User { Id=2 ,  Name = "زهرا", Email = "zahra@example.com", Age = 28 }
-        };
-
-      
-        
-        public ActionResult List()
+            _userService = userService;
+        }
+        /// <summary>
+        /// اکشن نمایش لیست
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> List()
         {
-
-           
-          
-            //var users = new List<User>
-            //{
-            //    new User {  Name = "ستاره", Email = "setareh@example.com", Age = 29 },
-            //    new User {  Name = "زهرا", Email = "zahra@example.com", Age = 28 }
-
-            //};
-            return View(ListUsers.OrderBy(c=> c.Id).ToList());
+            await _userService.InitData();
+            return View(await _userService.GetList());
         }
 
         [HttpGet]
         public ActionResult Insert()
-        { 
+        {
             User user = new User();
             return View(user);
         }
         [HttpPost]
-        public ActionResult Insert(User user)
+        public async Task<ActionResult> Insert(User user)
         {
-            user.Id = ListUsers.OrderByDescending(c=>c.Id).Select(c=>c.Id).FirstOrDefault() + 1;
-            ListUsers.Add(user);
+           
+            await _userService.Insert(user);
+
             return RedirectToAction("list");
         }
 
-      public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            User user= ListUsers.FirstOrDefault(c=>c.Id==id);
-            ListUsers.Remove(user);
+           await _userService.delete(id);
             return RedirectToAction("list");
 
         }
 
         [HttpGet]
-        public ActionResult Update(int id)
+        public async Task<ActionResult> Update(int id)
         {
-            User user = ListUsers.FirstOrDefault(c=>c.Id==id);
-            
+            var user =await _userService.Get(id);
+
             return View(user);
         }
 
         [HttpPost]
-        public ActionResult Update(User user)
+        public async Task<ActionResult> Update(User user)
         {
-            User Olduser= ListUsers.FirstOrDefault(c => c.Id == user.Id);
-            ListUsers.Remove(Olduser);
-            ListUsers.Add(user);
+           await _userService.Update(user);
             return RedirectToAction("list");
         }
 
