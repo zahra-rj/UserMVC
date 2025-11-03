@@ -20,6 +20,7 @@
         <th>مدل</th>
         <th>رنگ</th>
             <th>مالک</th>
+            <th>تصویر</th>
         <th></th>       
     </tr>
     </thead>
@@ -32,6 +33,7 @@
                 <td>@u.Model</td>
                 <td>@u.Color</td>
                 <td>@u.UserName</td>
+                <td><img style="width:50px;" src="@u.ImgPath" /> </td>
                 <td><a href="/User/Delete/@u.Id">حذف</a><a href="/User/Update/@u.Id">ویرایش</a></td>
             </tr>
         }

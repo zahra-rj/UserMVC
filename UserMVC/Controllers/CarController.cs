@@ -11,45 +11,21 @@ namespace UserMVC.Controllers
     public class CarController : Controller
     {
 
+    private readonly ICarService _carService;
     private readonly IUserService _userService;
 
-
-        public async Task<VmCar> Tovmcar(Car car)
-        {
-            return new VmCar
-            {
-                Id = car.Id,
-                Brand = car.Brand,
-                Model = car.Model,
-                Color = car.Color,
-
-                UserName =await _userService.GetNameById(car.Id),
-
-            };
-        }
-        public async Task<List<VmCar>> Tovmcar(List<Car> car)
-        {
-            List<VmCar> li = new List<VmCar>();
-            foreach (var item in car)
-            {
-                li.Add(await Tovmcar(item));
-            }
-            return li;
-        }
-        public static List<Car> ListCar = new List<Car>
-        {
-            new Car {Id=1, Brand="Benz",Model="s5",Color="pink",UserId=1},
-            new Car {Id=2,Brand="BMW",Model="s5",Color="Blue", UserId=2}
-        };
-
-        public CarController(IUserService userService)
-        {
-            _userService = userService;
-        }
+        public CarController(ICarService carService,IUserService userService)
+    {
+        _carService = carService;
+        _userService = userService;
+    }
+               
 
         public async Task<IActionResult> List()
         {
-            return View(Tovmcar(ListCar));
+            await _carService.Initdata();
+            var res = await _carService.GetList();
+            return View(res);
 
         }
         [HttpGet]
@@ -57,46 +33,57 @@ namespace UserMVC.Controllers
         {
            
             Car car = new Car();
-            ViewBag.Users = _userService.GetList() ;
+            ViewBag.Users =await _userService.GetList() ;
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(Car car)
         {
-            List<Car> sdgdsg = new List<Car>();
-            sdgdsg.Add(car);
-            car.Id = ListCar.OrderByDescending(c => c.Id).Select(c => c.Id).FirstOrDefault() + 1;
-            ListCar.Add(car);
+            if (car.File == null || car.File.Length == 0)
+                return BadRequest("فایلی انتخاب نشده است.");
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", car.File.FileName);
+
+            // ایجاد مسیر در صورت نبود پوشه
+            var directory = Path.GetDirectoryName(path);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+
+            // ذخیره فایل به صورت Stream
+
+
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await car.File.CopyToAsync(stream);
+            }
+            car.ImgPath = "/img/"+ car.File.FileName;
+            await _carService.Insert(car);
             return RedirectToAction("list");
         }
 
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            Car car = ListCar.FirstOrDefault(c => c.Id == id);
+            Car car = await _carService.Get(id);
             return View(car);
         }
 
         [HttpPost]
         public async Task<IActionResult> Update(Car car)
         {
-            Car oldcar = ListCar.FirstOrDefault(c => c.Id == car.Id);
-            ListCar.Remove(oldcar);
-            ListCar.Add(car);
+            await _carService.Update(car);
+           
             return RedirectToAction("list");
 
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            Car car = ListCar.FirstOrDefault(c => c.Id == id);
-            ListCar.Remove(car);
+           await _carService.Delete(id);
             return RedirectToAction("list");
         }
-
-
-
 
 
 

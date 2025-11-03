@@ -11,6 +11,6 @@ namespace UserMVC.Services
         Task<User> Get(int id);
         Task Update(User user);
         Task<string> GetNameById(int id);
-        async Task Log(User user);
+         Task Log(User user);
     }
 }

@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //builder.Services.AddTransient<IUserService, UserDBService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ICarService, CarService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
