@@ -7,5 +7,6 @@ namespace UserMVC.DB
         public static List<News> News { get; set; } 
         public static List<User> Users { get; set; }  
         public static List<Car> Cars { get; set; }
+        public static List<Product> Product { get; set; }
     }
 }

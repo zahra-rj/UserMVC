@@ -5,7 +5,9 @@ namespace UserMVC.Services
 {
     public class UserService : IUserService
     {
-        public UserService() { }
+        public UserService() {
+            InitData();
+        }
 
         public async Task InitData()
         {

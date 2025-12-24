@@ -1,0 +1,47 @@
+﻿@model List<UserMVC.Models.Product>
+
+@{
+    ViewData["Title"] = "لیست محصولات";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2> لیست محصولات</h2>
+
+
+<table class="table table-dark table-striped mt-4 ">
+    <thead>
+        <tr>
+            <th>شناسه</th>
+            <th>نام محصول</th>
+            <th>توضیحات</th>
+            <th>قیمت</th>
+            <th>تعداد</th>
+            <th>تصویر</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Description</td>
+                    <td>@p.price</td>
+                    <td>@p.quantity</td>
+
+                    <td>
+                        <img style="width:50px;" src="@p.ImgPath" />
+                    </td>
+
+                    <td>
+                        <a href="/Product/Delete/@p.Id">حذف</a>
+                        <a href="/Product/Update/@p.Id">ویرایش</a>
+                    </td>
+                </tr>
+            }
+        
+    </tbody>
+</table>

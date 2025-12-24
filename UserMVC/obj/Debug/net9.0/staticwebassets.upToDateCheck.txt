@@ -1,7 +1,6 @@
 wwwroot\css\AdminStyle.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\img\img.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -63,7 +62,9 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\img\img.jpg
 wwwroot\img\logomin.png
+wwwroot\img\New Project.png
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\LICENSE.txt
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\Mein\UserMVC\UserMVC\wwwroot\lib\jquery\dist\jquery.slim.min.js
